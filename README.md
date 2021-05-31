@@ -43,9 +43,9 @@ You will need to give your webserver's `IP` address to CCBill, so they can place
 
 Run the `app:ccbill:status` command on your webserver:
 
-    su datinglibre
-    cd /var/www/datinglibre
-    ./bin/console app:ccbill:status 123
+    root@datinglibre:~# cd /var/www/datinglibre
+    root@datinglibre:/var/www/datinglibre# su datinglibre
+    datinglibre@datinglibre:/var/www/datinglibre$ ./bin/console app:ccbill:status 123
     The given subscription was not found for the account the merchant was authenticated on
 
 If you receive any other response, ie. related to failed authentication, then the bundle has not been installed correctly.
