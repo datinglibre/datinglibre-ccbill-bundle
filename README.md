@@ -35,7 +35,7 @@ If you are using this bundle as part of [DatingLibre](https://github.com/datingl
 
 Enter the output into `deploy/inventories/staging/group_vars/webservers.yml` as `ccbill_password`.
 
-This value will be used by Ansible when it generates and uploads the `env.local` file when you [update](https://github.com/datinglibre/DatingLibre/wiki/Updating) the application.
+This value will be used by the [update script](https://github.com/datinglibre/DatingLibre/wiki/Updating) when it generates and uploads the `env.local` file.
 
 You can test that the bundle and credentials have been installed correctly, by trying to run the `app:ccbill:status` command, which tries to retrieve the status of a subscription. 
 
