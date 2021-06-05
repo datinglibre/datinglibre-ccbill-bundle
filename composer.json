@@ -13,11 +13,11 @@
         "ext-json": "*",
         "ext-simplexml": "*",
         "datinglibre/ccbill": "0.7.*",
-        "symfony/framework-bundle": "5.2.*",
-        "symfony/serializer": "5.2.*",
-        "symfony/http-client": "5.2.*",
-        "symfony/console": "5.2.*",
-        "symfony/dotenv": "5.2.*",
+        "symfony/framework-bundle": "5.2.*||5.3.*",
+        "symfony/serializer": "5.2.*||5.3.*",
+        "symfony/http-client": "5.2.*||5.3.*",
+        "symfony/console": "5.2.*||5.3.*",
+        "symfony/dotenv": "5.2.*||5.3.*",
         "psr/container": "^1.0"
     },
     "autoload": {
