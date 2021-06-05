@@ -42,6 +42,7 @@ class CcBillClientService
      * @throws RedirectionExceptionInterface
      * @throws ClientExceptionInterface
      * @throws CcBillResponseCodeException
+     * @throws Exception
      */
     public function viewSubscriptionStatus(string $subscriptionId): string
     {
@@ -59,11 +60,11 @@ class CcBillClientService
 
         $content = $response->getContent(true);
 
-        if (strpos($content, 'cancelDate') !== false) {
-            return $content;
+        if ($this->isCodeResponse($content)) {
+            return CcBillClient::parseResponseCode($content)->getMessage();
         }
 
-        return CcBillClient::parseResponseCode($content)->getMessage();
+        return $content;
     }
 
     /**
@@ -74,7 +75,7 @@ class CcBillClientService
      * @throws ClientExceptionInterface
      * @throws Exception
      */
-    public function cancelSubscription(string $subscriptionId): void
+    public function cancelSubscription(string $subscriptionId): string
     {
         $response = $this->httpClient->request(
             'GET',
@@ -88,11 +89,8 @@ class CcBillClientService
             ]
         );
 
-        $responseCode = CcBillClient::parseResponseCode($response->getContent(true));
-
-        if ($responseCode->isError()) {
-            throw new Exception('Could not cancel subscription [%s]', $responseCode->getMessage());
-        }
+        return CcBillClient::parseResponseCode($response->getContent(true))
+            ->getMessage();
     }
 
     private function getAuthentication(): array
@@ -103,5 +101,19 @@ class CcBillClientService
             'username' => $this->username,
             'password' => $this->password,
         ];
+    }
+
+    /**
+     * @throws Exception
+     */
+    private function isCodeResponse($content): bool
+    {
+        $xml =  @simplexml_load_string($content);
+
+        if ($xml === null) {
+            throw new Exception(sprintf('Could not parse XML [%s]', $content));
+        }
+
+        return count(json_decode(json_encode($xml), true)) === 1;
     }
 }

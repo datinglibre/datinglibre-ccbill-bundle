@@ -10,10 +10,10 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ViewSubscriptionStatus extends Command
+class CancelSubscription extends Command
 {
     private const SUBSCRIPTION_ID = 'subscriptionId';
-    protected static $defaultName = 'app:ccbill:status';
+    protected static $defaultName = 'app:ccbill:cancel';
     private CcBillClientService $ccBillClientService;
 
     public function __construct(CcBillClientService $ccBillClientService)
@@ -24,14 +24,14 @@ class ViewSubscriptionStatus extends Command
 
     protected function configure()
     {
-        $this->setDescription('View ccbill subscription status');
+        $this->setDescription('Cancel ccbill subscription');
 
         $this->addArgument(self::SUBSCRIPTION_ID, InputArgument::REQUIRED, self::SUBSCRIPTION_ID);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln($this->ccBillClientService->viewSubscriptionStatus($input->getArgument(self::SUBSCRIPTION_ID)));
+        $output->writeln($this->ccBillClientService->cancelSubscription($input->getArgument(self::SUBSCRIPTION_ID)));
 
         return 0;
     }

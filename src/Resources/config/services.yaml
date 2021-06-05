@@ -19,3 +19,14 @@ services:
     arguments: [ '@DatingLibre\CcBillBundle\Service\CcBillClientService' ]
     calls:
       - [ setName, [ 'app:ccbill:status' ] ]
+
+  DatingLibre\CcBillBundle\Command\CancelSubscription:
+    class: DatingLibre\CcBillBundle\Command\CancelSubscription
+    tags:
+      - { name: console.command }
+      - { name: container.no_preload }
+    autowire: true
+    autoconfigure: true
+    arguments: [ '@DatingLibre\CcBillBundle\Service\CcBillClientService' ]
+    calls:
+      - [ setName, [ 'app:ccbill:cancel' ] ]

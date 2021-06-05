@@ -4,13 +4,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Dating Libre",
+            "name": "Dating Libre CcBill Bundle",
             "email": "admin@datinglibre.com"
         }
     ],
     "description": "DatingLibre CcBill Client",
     "require": {
         "ext-json": "*",
+        "ext-simplexml": "*",
         "datinglibre/ccbill": "0.7.*",
         "symfony/framework-bundle": "5.2.*",
         "symfony/serializer": "5.2.*",
