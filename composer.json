@@ -33,8 +33,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
         "doctrine/doctrine-fixtures-bundle": "^3.3",
-        "symfony/phpunit-bridge": "^5.2",
-        "phpunit/phpunit": "^9.5"
+        "symfony/phpunit-bridge": "^5.3"
     },
     "scripts": {
         "auto-scripts": {

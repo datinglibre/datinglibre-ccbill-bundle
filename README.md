@@ -1,5 +1,7 @@
 # datinglibre-ccbill-bundle
 
+![Build Status](https://github.com/datinglibre/datinglibre-ccbill-bundle/actions/workflows/datinglibre-ccbill-bundle.yml/badge.svg)
+
 This bundle wraps functionality of the [datinglibre/ccbill](https://github.com/datinglibre/ccbill) library in a Symfony service, adds some Symfony commands, and allows CCBill authentication to be configured by a parent Symfony application.
 
 ## Installation
