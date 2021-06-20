@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9b56dca07dfe0bfbde570ee98989e9b",
+    "content-hash": "b4233b11fca1eb9b4e5b56fd5e092b40",
     "packages": [
         {
             "name": "datinglibre/ccbill",
@@ -5042,6 +5042,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
+        "php": "^7.4||^8.0",
         "ext-json": "*",
         "ext-simplexml": "*"
     },

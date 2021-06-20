@@ -10,6 +10,7 @@
     ],
     "description": "DatingLibre CcBill Client",
     "require": {
+        "php": "^7.4||^8.0",
         "ext-json": "*",
         "ext-simplexml": "*",
         "datinglibre/ccbill": "0.7.*",
