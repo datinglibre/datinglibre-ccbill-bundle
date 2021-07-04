@@ -60,11 +60,13 @@ class CcBillClientService
 
         $content = $response->getContent(true);
 
-        if ($this->isCodeResponse($content)) {
-            return CcBillClient::parseResponseCode($content)->getMessage();
+        $ccBillResponse = CcBillClient::parseResponse($content);
+
+        if ($ccBillResponse->isResponseCode() && !$ccBillResponse->isContent()) {
+            return $ccBillResponse->getResponseCode()->getMessage();
         }
 
-        return $content;
+        return json_encode($ccBillResponse->getContent());
     }
 
     /**
@@ -89,7 +91,8 @@ class CcBillClientService
             ]
         );
 
-        return CcBillClient::parseResponseCode($response->getContent(true))
+        return CcBillClient::parseResponse($response->getContent(true))
+            ->getResponseCode()
             ->getMessage();
     }
 
@@ -101,19 +104,5 @@ class CcBillClientService
             'username' => $this->username,
             'password' => $this->password,
         ];
-    }
-
-    /**
-     * @throws Exception
-     */
-    private function isCodeResponse($content): bool
-    {
-        $xml =  @simplexml_load_string($content);
-
-        if ($xml === null) {
-            throw new Exception(sprintf('Could not parse XML [%s]', $content));
-        }
-
-        return count(json_decode(json_encode($xml), true)) === 1;
     }
 }
