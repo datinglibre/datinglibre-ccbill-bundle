@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e941d833fa88deb7371bb6eb6b70ce1d",
+    "content-hash": "bb4dff5c39438de77b7830437794a292",
     "packages": [
         {
             "name": "datinglibre/ccbill",
-            "version": "v0.10.0",
+            "version": "v0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/datinglibre/ccbill.git",
-                "reference": "d27b7069a0c432ec21035a306f67016bf7c5b6bb"
+                "reference": "dbd3192b4b7966c49afd18bdbff53709c2cc4991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/datinglibre/ccbill/zipball/d27b7069a0c432ec21035a306f67016bf7c5b6bb",
-                "reference": "d27b7069a0c432ec21035a306f67016bf7c5b6bb",
+                "url": "https://api.github.com/repos/datinglibre/ccbill/zipball/dbd3192b4b7966c49afd18bdbff53709c2cc4991",
+                "reference": "dbd3192b4b7966c49afd18bdbff53709c2cc4991",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "DatingLibre CCBill library (unoffical)",
             "support": {
                 "issues": "https://github.com/datinglibre/ccbill/issues",
-                "source": "https://github.com/datinglibre/ccbill/tree/v0.10.0"
+                "source": "https://github.com/datinglibre/ccbill/tree/v0.11.0"
             },
-            "time": "2021-07-04T14:53:37+00:00"
+            "time": "2021-07-05T17:27:18+00:00"
         },
         {
             "name": "psr/cache",
